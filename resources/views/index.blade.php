@@ -80,7 +80,7 @@
                 <div class="panel-body">
                     <!-- 建立新 Task 表單 -->
                     <form action="/tasks" method="POST" class="form-horizontal">
-                        {{ csrf_field() }}
+                        @csrf
                         <!-- Task 名稱 -->
                         <div class="form-group">
                             <label for="task-name" class="col-sm-3 control-label">Task</label>
@@ -128,7 +128,7 @@
                                     @if (!$task->completed)
                                     <!-- 完成 Task 按鈕 -->
                                     <form action="/tasks/{{ $task->id }}/complete" method="POST" style="display: inline-block">
-                                        {{ csrf_field() }}
+                                        @csrf
                                         <button type="submit" class="btn btn-success">
                                             <i class="fa fa-check"></i>完成
                                         </button>
@@ -136,7 +136,7 @@
                                     @endif
                                     <!-- 刪除 Task 按鈕 -->
                                     <form action="/tasks/{{ $task->id }}/delete" method="POST" style="display: inline-block">
-                                        {{ csrf_field() }}
+                                        @csrf
                                         <button type="submit" class="btn btn-danger">
                                             <i class="fa fa-trash"></i>刪除
                                         </button>
