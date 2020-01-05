@@ -13,3 +13,6 @@ use App\Http\Controllers\TaskController;
 */
 
 Route::get('/', [TaskController::class, 'index']);
+Route::post('/tasks', [TaskController::class, 'store']);
+Route::post('/tasks/{id}/complete', [TaskController::class, 'update']);
+Route::post('/tasks/{id}/delete', [TaskController::class, 'destroy']);
